@@ -53,7 +53,10 @@ public class Atm {
             System.out.println("Amount transferred successfully");
         }
     }
-
+    public void balance()
+    {
+        System.out.println("The balance is : "+accountBalance);
+    }
     public static void main(String[] args) {
         Atm atm = new Atm();
         int userId = 123456;
@@ -66,7 +69,7 @@ public class Atm {
 
         if (userId == tempUserId && pin == tempPin) {
             while(true){
-            System.out.print("\n1.Transaction History\n2.Withdraw\n3.Deposit\n4.Transfer\n5.Quit");
+            System.out.print("\n1.Transaction History\n2.Withdraw\n3.Deposit\n4.Transfer\n5.Account Balance\n6.Quit");
             System.out.println("\nEnter your Choice : ");
             int choice = atm.scanner.nextInt();
 
@@ -84,6 +87,9 @@ public class Atm {
                     atm.transfer();
                     break;
                 case 5:
+                    atm.balance();
+                    break;
+                case 6:
                     System.exit(0);
                 default:
                     System.out.println("Invalid Choice");
